@@ -1,0 +1,100 @@
+
+
+section.edit {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    div {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 20px;
+        button {
+            margin-left: var(--left);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-transform: uppercase;
+            outline: none;
+            text-decoration: none;
+            background: none;
+            text-align: center;
+            transition: transform .2s;
+            border: 2px solid #e34761;
+    
+            margin-right: var(--right);
+        }
+        h2 {
+            width: 60%;
+            font-size: 24px;
+            padding: 0;
+            text-transform: uppercase;
+        }
+    }
+
+
+    form {
+        margin-bottom: 60px;
+        button {
+            margin-left: var(--left);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-transform: uppercase;
+            outline: none;
+            text-decoration: none;
+            background: none;
+            text-align: center;
+            transition: transform .2s;
+            border: 2px solid #e34761;
+    
+            margin-right: var(--right);
+        }
+        input {
+            font-family: 'AmaticSC-Bold';
+            width: 200px;
+            font-size: 24px;
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            outline:none;
+            margin-left: -15px;
+        }
+    }
+}
+
+section.plushabit {
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-left: var(--left);
+        margin-bottom: 50px;
+        input {
+            font-family: 'BadScript';
+            width: 250px;
+            font-size: 20px;
+            font-weight: 400;
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            outline:none;
+
+            margin-right: 10px;
+        }
+        button {
+            outline: none;
+            text-decoration: none;
+            border: none;
+            background: none;
+            text-align: center;
+            transition: opacity .5s;  
+            opacity: 0.7;     
+            cursor: pointer;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
