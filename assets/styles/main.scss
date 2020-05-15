@@ -10,21 +10,22 @@ body {
     margin: 0;
 
 	display: flex;
-	align-items: center;
-	// min-height: 100vh;
+    align-items: center;
+    overflow: hidden;
 }
 
 #app {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+	height: 100vh;
     margin: 0 auto;
 	
     background-color: #FFF;
 	box-shadow: 0 0 20px -5px rgba(0, 0, 0, .25);
-
+    
 	display: flex;
 	flex-direction: column;
 }
+
 
 header {
     width: 100%;
@@ -46,7 +47,6 @@ header {
 section {
     display: flex;
     flex-wrap: wrap;
-    // min-width: 100px;
     margin-left: 5px;
     margin-bottom: 20px;
     h2 {
@@ -69,17 +69,19 @@ section {
 
 ul.days {
     display: flex;
-    justify-content: flex-end;
+    // justify-content: flex-end;
     justify-content: space-between;
+  
     margin: 0 7px 0 40px;
 
     li {
-        list-style-type: none;
+        text-align: center;
         border-bottom: 1px solid #000;
-        // margin-right: 15px;
+        list-style-type: none;
         font-size: 20px;
     }
 }
+
 
 main {
     h2 {
@@ -90,6 +92,8 @@ main {
         padding-top: 4px;
         padding-left: 5px;
         text-transform: uppercase;
+        position: relative;
+        z-index: 1;
 
     }
     ul.list {
@@ -103,6 +107,7 @@ main {
             font-size: 15px;
             margin-left: 5px;
             margin-right: 15px;
+            margin-bottom: 10px;
 
             display: flex;
             justify-content: space-between;
@@ -110,7 +115,6 @@ main {
             p {
                 border-bottom: 1px solid #000;
                 width: 50px;
-                // margin-right: 10px;
                 margin: 0 10px 10px 0;
                 line-height: 1.2;
             }
@@ -125,6 +129,7 @@ main {
                 text-align: center;
                 transition: transform .2s;
                 border: 2px solid #e34761;
+                cursor: pointer;
             }
 
         }
@@ -135,13 +140,13 @@ footer {
     display: flex;
     justify-content: space-around;
     margin-top: auto;
-    flex: 0 0 auto;
-
-    // min-height: calc(100vh - 80px);
+    
+    position: relative;
+    z-index: 1;
  
     width: 100%;
     height: 80px;
-    background-color: rgb(241, 241, 239, 60%);
+    background-color: rgb(241, 241, 239, 1);
     
     button {
         outline: none;
@@ -157,4 +162,294 @@ footer {
             height: 60px;
         }
     }
+}
+
+.line {
+    position: absolute;
+    display: none;
+    // left: 80px;
+    top: 1px;
+    // width: 450px;
+    height: 100vh;
+    border-right: 2px solid #000;
+    z-index: 0; 
+}
+.lineone {
+    left: 100px;
+}
+.linetwo {
+    left: 530px;
+}
+.linethree {
+    left: 1000px;
+}
+.desktop,
+.habit {
+    display: none;
+}
+
+@media (min-width: 500px) {
+
+    section {
+        margin-left: 0;
+        h2 {
+           padding-left: var(--left);
+       }
+    }
+
+    ul.days {
+        position: relative;
+        margin: 0;
+        margin-right: 15px;
+        padding: 0;
+        .habit {
+            padding-left: var(--left);
+            background-color: #F18C8E;
+            display: block;
+            margin: 0;
+
+            width: 175px;
+        }
+        li {
+            width: 40px;
+        }
+    }
+    
+    main ul.list li p  {
+        padding-left: var(--left);
+        width: 150px;
+        font-size: 15px;
+    }
+
+    main h2 {
+        padding-left: var(--left);
+        font-size: 20px;
+        height: 29px
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+@media (min-width: 720px) {
+
+    .desktopone {
+        display: block;
+
+    }
+    .lineone {
+        display: block;
+        left: 69.3%;
+    }
+
+    main ul.list li p  {
+        width: 250px;
+        font-size: 17px;
+    }
+
+    main h2 {
+        font-size: 23px;
+        height: 34px
+    }
+
+    ul.days {
+        align-items: center;
+        .habit {
+            width: 260px;
+        }
+        li {
+            width: 25px;
+        }
+    }  
+}
+@media (min-width: 820px) {
+    .lineone {
+        left: 67.8%;
+    } 
+}
+
+@media (min-width: 920px) {
+    .lineone {
+        left: 66.3%;
+    } 
+}
+
+@media (min-width: 1020px) {
+    .lineone {
+        left: 64.3%;
+    } 
+}
+
+@media (min-width: 1200px) {
+    
+    .desktoptwo {
+        display: block;
+    }
+    .lineone {
+        left: 57.8%;
+    }
+    .linetwo {
+        display: block;
+        left: 79%;
+    }   
+
+    main ul.list li p  {
+        width: 400px;
+        font-size: 20px;
+    }
+
+    main h2 {
+        font-size: 26px;
+        height: 36px
+    }
+
+    ul.days {
+        .habit {
+            width: 410px;
+        }
+    
+    }
+}
+
+@media (min-width: 1250px) {
+    .lineone {
+        left: 56.3%;
+    }
+    .linetwo {
+        left: 78%;
+    }   
+}
+
+@media (min-width: 1330px) {
+    .lineone {
+        left: 55.3%;
+    }
+    .linetwo {
+        left: 77.6%;
+    }   
+}
+
+@media (min-width: 1400px) {
+    .lineone {
+        left: 54.3%;
+    }
+    .linetwo {
+        left: 76.6%;
+    }   
+}
+
+@media (min-width: 1450px) {
+    .lineone {
+        left: 53.1%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .desktopthtee {
+        display: block;
+    }
+    .lineone {
+        left: 45.5%;
+    }
+    .linetwo {
+        left: 63.7%;
+    }   
+    .linethree {
+        display: block;
+        left: 82.1%;
+    }   
+
+    ul.days {
+        .habit {
+            width: 420px;
+        }
+        li {
+            width: 40px;
+        }
+    }
+}
+
+@media (min-width: 1670px) {
+    .lineone {
+        left: 44.8%;
+    }
+    .linetwo {
+        left: 63.2%;
+    }   
+    .linethree {
+        left: 81.6%;
+    }   
+}
+
+@media (min-width: 1740px) {
+    .lineone {
+        left: 43.9%;
+    }
+    .linetwo {
+        left: 62.6%;
+    }   
+    .linethree {
+        left: 81.3%;
+    }   
+}
+
+@media (min-width: 1850px) {
+    .lineone {
+        left: 42.8%;
+    }
+    .linetwo {
+        left: 61.9%;
+    }   
+    .linethree {
+        left: 81.0%;
+    }   
+}
+@media (min-width: 1980px) {
+    .lineone {
+        left: 41.7%;
+    }
+    .linetwo {
+        left: 61.2%;
+    }   
+    .linethree {
+        left: 80.7%;
+    }   
+}
+
+@media (min-width: 2130px) {
+    .lineone {
+        left: 40.4%;
+    }
+    .linetwo {
+        left: 60.2%;
+    }   
+    .linethree {
+        left: 80.0%;
+    }   
+}
+
+
+@media (min-width: 2400px) {
+    .lineone {
+        left: 38.7%;
+    }
+    .linetwo {
+        left: 59.0%;
+    }   
+    .linethree {
+        left: 79.5%;
+    }   
+}
+
+@media (min-width: 2770px) {
+    .lineone {
+        left: 36.8%;
+    }
+    .linetwo {
+        left: 57.8%;
+    }   
+    .linethree {
+        left: 78.9%;
+    }   
 }
